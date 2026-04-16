@@ -736,6 +736,7 @@
   function showToast(msg, type = '') {
     els.toast.textContent = msg;
     els.toast.className = 'toast show';
+    
     if (type === 'err') {
       els.toast.classList.add('err');
       els.toast.style.borderColor = 'var(--red)';
@@ -743,7 +744,7 @@
     } else if (type === 'ok') {
       els.toast.classList.add('ok');
       els.toast.style.borderColor = 'var(--green-l)';
-      els.style.color = 'var(--green-l)';
+      els.toast.style.color = 'var(--green-l)'; // FIXED: Added .toast
     } else {
       els.toast.style.borderColor = 'var(--amber)';
       els.toast.style.color = 'var(--amber)';
